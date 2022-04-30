@@ -53,6 +53,7 @@
 - Spring Core
 - Spring Data
 - Spring Cloud(Eureka Server, Eureka Client, Gateway Api, Feign Client)
+- Spring Web
 - Apache Kafka
 - PostgreSQL
 - Docker для использования базы данных и кафки в контейнерах
