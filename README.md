@@ -1,7 +1,7 @@
 # microservices-project
 Учебный проект с исользованием микросервисной архитектуры
-converter-service принимает json следующего формата: 
-{
+- converter-service принимает json следующего формата: 
+> {
    "file":{
       "fileId":"320a4a79-80a5-4756-bd68-a572027131be",
       "version":"1.0",
@@ -46,6 +46,13 @@ converter-service принимает json следующего формата:
       }
    }
 }
-затем конвертирует его в xml и отправляет запрос с помощью feign client на receive-service
-receive-service принимает xml и отправляет его в виде String в топик кафки
-kafka-consumer-service читает с топика String конвертирует его в объект и сохраняет в базу данных
+- затем конвертирует его в xml и отправляет запрос с помощью feign client на receive-service
+- receive-service принимает xml и отправляет его в виде String в топик кафки
+- kafka-consumer-service читает с топика String, конвертирует его в объект и сохраняет в базу данных
+## Используемые технологии:
+- Spring Core
+- Spring Data
+- Spring Cloud(Eureka Server, Eureka Client, Gateway Api, Feign Client)
+- Apache Kafka
+- PostgreSQL
+- Docker для использования базы данных и кафки в контейнерах
