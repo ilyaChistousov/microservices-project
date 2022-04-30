@@ -1,0 +1,12 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: converter
+  kafka:
+    bootstrap-servers: localhost:29092
+
+eureka:
+  client.service-url:
+    defaultZone: http://localhost:8085/eureka

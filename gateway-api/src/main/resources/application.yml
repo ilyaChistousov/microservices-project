@@ -1,0 +1,38 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: gateway-api
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: converter
+          uri: lb://converter
+          predicates:
+            - Path=/facade/form
+            - Method=POST
+        - id: kafka-consumer
+          uri: lb://kafka-consumer
+          predicates:
+            - Path=/file
+            - Method=GET
+        - id: kafka-consumer
+          uri: lb://kafka-consumer
+          predicates:
+            - Path=/main-info/
+            - Method=GET
+        - id: kafka-consumer
+          uri: lb://kafka-consumer
+          predicates:
+            - Path=/file/{id}
+            - Method=GET
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8085/eureka"
